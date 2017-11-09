@@ -28,9 +28,14 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.2.0",
     "jscs": "^2.10.1"
   },
   "scripts": {
+    "build": "npx babel ./src/jquery.tnw-parallax.js --out-file ./dist/jquery.tnw-parallax.js",
+    "build --production": "BABEL_ENV=production npm run build",
     "jscs": "jscs src"
   }
 }
