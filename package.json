@@ -1,0 +1,31 @@
+{
+  "name": "jquery-tnw-parallax",
+  "version": "1.0.0",
+  "description": "jQuery plugins for parallax scrolling.",
+  "keywords": [
+    "jquery-plugin",
+    "jquery",
+    "parallax",
+    "plugins"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oscaralexander/jquery-tnw-sticky.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oscaralexander/jquery-tnw-sticky/issues"
+  },
+  "author": {
+    "name": "Alexander Griffioen",
+    "email": "alexander@thenextweb.com",
+    "url": "https://github.com/oscaralexander"
+  },
+  "homepage": "https://brand.thenextweb.com",
+  "license": "MIT",
+  "devDependencies": {
+    "jscs": "^2.10.1",
+  },
+  "scripts": {
+    "jscs": "jscs src",
+  }
+}
