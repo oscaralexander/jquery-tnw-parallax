@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "jQuery plugins for parallax scrolling.",
   "keywords": [
-    "jquery-plugin",
     "jquery",
+    "jquery-plugin",
     "parallax",
-    "plugins"
+    "plugin"
   ],
   "repository": {
     "type": "git",
