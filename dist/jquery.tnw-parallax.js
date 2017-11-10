@@ -37,7 +37,7 @@ var TNWParallax = function () {
                     _this.maxTranslateY[i] = (height - 100) / height * 100;
                 } else {
                     _this.maxTranslateY[i] = 0;
-                    console.warn('TNWParallax: No inline height set for:', el);
+                    console.error('TNWParallax: No inline height set for:', el);
                 }
             });
 

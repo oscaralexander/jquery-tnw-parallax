@@ -7,13 +7,13 @@
 const pluginName = 'tnwParallax'
 
 class TNWParallax {
-    constructor(el, options) {
+    constructor (el, options) {
         this.options = $.extend({}, this.defaults, options)
         this.$el = $(el)
         this.init()
     }
 
-    init() {
+    init () {
         this.maxTranslateY = []
         this.scrollTop = $(window).scrollTop()
 
@@ -25,7 +25,7 @@ class TNWParallax {
                 this.maxTranslateY[i] = ((height - 100) / height) * 100
             } else {
                 this.maxTranslateY[i] = 0
-                console.warn('TNWParallax: No inline height set for:', el);
+                console.error('TNWParallax: No inline height set for:', el)
             }
         })
 
@@ -36,16 +36,16 @@ class TNWParallax {
         $(window).on('tnw:scroll', this.onScroll.bind(this))
     }
 
-    onResize() {
+    onResize () {
         this.updateDimensions()
     }
 
-    onScroll(e) {
+    onScroll (e) {
         this.scrollTop = e.top
         this.update()
     }
 
-    update() {
+    update () {
         let multiplier
         let scrollBottom
         let translateY
@@ -59,15 +59,15 @@ class TNWParallax {
                     translateY = this.maxTranslateY[i] * multiplier
 
                     $(el).css({
-                        '-webkit-transform': 'translateY(' + translateY + '%)',
-                                'transform': 'translateY(' + translateY + '%)'
+                        '-webkit-transform': `translateY(${translateY}%)`,
+                        'transform': `translateY(${translateY}%)`
                     })
                 }
             })
         }
     }
 
-    updateDimensions() {
+    updateDimensions () {
         this.container = {
             bottom: this.$el.offset().top + this.$el.outerHeight(),
             height: this.$el.outerHeight(),
@@ -84,10 +84,10 @@ TNWParallax.prototype.defaults = {
 
 $.fn[pluginName] = function (options) {
     return this.each(function () {
-        let instance = $(this).data(pluginName)
+        let instance = $(this).data(`plugin_${pluginName}`)
 
         if (!instance) {
-            $(this).data(pluginName, new TNWParallax(this, options))
+            $(this).data(`plugin_${pluginName}`, new TNWParallax(this, options))
         } else {
             if (typeof options === 'string') {
                 instance[options]()
